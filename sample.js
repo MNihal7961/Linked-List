@@ -49,12 +49,10 @@ const list = new LinkedList();
 
 console.log('empty', list.isEmpty());
 console.log('size', list.getSize());
-list.print();
 list.prepend(10);
-list.print();
 list.prepend(20);
-list.print();
 list.prepend(30);
+list.prepend(40)
 list.print();
 console.log('empty', list.isEmpty());
 console.log('size', list.getSize());

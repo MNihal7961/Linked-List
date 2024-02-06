@@ -40,6 +40,8 @@ class LinkedList{
     }
 }
 
+// complexity is constant O(1)
+
 const list=new LinkedList()
 list.prepend(100)
 list.prepend(200)

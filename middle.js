@@ -1,5 +1,3 @@
-// In a singly linked list append means adding new node at last ie, as tail.
-
 class Node{
     constructor(value){
         this.value=value
@@ -21,32 +19,31 @@ class LinkedList{
             this.head=node
         }else{
             let prev=this.head
-            while (prev.next) {
+            while(prev.next){
                 prev=prev.next
             }
             prev.next=node
         }
         this.size++
     }
-    print(){
+    findMiddle(){
         if(this.isEmpty()){
-            console.log('List is empty')
+            return null
         }else{
-            let curr = this.head;
-            let listValues = '';
-            while (curr) {
-                listValues+=`${curr.value} `
-                curr=curr.next
+            let fast=this.head
+            let slow=this.head
+            while(fast&&fast.next){
+                slow=slow.next
+                fast=fast.next.next
             }
-            console.log(listValues)
+            return slow.value
         }
     }
 }
 
-// Complexity is linear O(n)
-
-const list=new LinkedList()
-list.append(100)
-list.append(200)
-list.append(300)
-list.print()
+const list= new LinkedList()
+list.append(4)
+list.append(2)
+list.append(5)
+list.append(6)
+console.log(list.findMiddle())
